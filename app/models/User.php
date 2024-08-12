@@ -1,13 +1,7 @@
 <?php
-require_once __DIR__ . '/../../config/database.php';
+require_once __DIR__ . '/../../core/Model.php';
 
-class User {
-    private $pdo;
-
-    public function __construct() {
-        $this->pdo = $GLOBALS['pdo'];
-    }
-
+class User extends Model {
     public function getAll() {
         $stmt = $this->pdo->query("SELECT * FROM users");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

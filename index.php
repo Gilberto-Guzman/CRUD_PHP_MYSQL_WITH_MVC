@@ -1,6 +1,6 @@
 <?php
-
-require_once 'app/controllers/UserController.php';
+require_once __DIR__ . '/core/Controller.php';
+require_once __DIR__ . '/app/controllers/UserController.php';
 
 $controller = new UserController();
 $route = $_GET['route'] ?? 'index';
